@@ -1,16 +1,20 @@
 <?php
 
-namespace Apps\Tms\Components\System\Tools\Uom;
+namespace Apps\Tms\Components\Tools\Uom;
 
+use Apps\Tms\Packages\Adminltetags\Traits\DynamicTable;
+use Apps\Tms\Packages\Tools\Uom\ToolsUom;
 use System\Base\BaseComponent;
 
 class UomComponent extends BaseComponent
 {
-    protected $package;
+    use DynamicTable;
+
+    protected $uomPackage;
 
     public function initialize()
     {
-        //$this->package = $this->usePackage(?::class);
+        $this->uomPackage = $this->usePackage(ToolsUom::class);
     }
 
     /**
@@ -18,7 +22,44 @@ class UomComponent extends BaseComponent
      */
     public function viewAction()
     {
-        return;
+        if (isset($this->getData()['id'])) {
+            if ($this->getData()['id'] != 0) {
+                $uom = $this->uomPackage->getById((int) $this->getData()['id']);
+
+                if (!$uom) {
+                    return $this->throwIdNotFound();
+                }
+
+                $this->view->uom = $uom;
+            }
+
+            $this->view->pick('uom/view');
+
+            return;
+        }
+
+        $controlActions =
+            [
+                'actionsToEnable'       =>
+                [
+                    'edit'      => 'system/tools/uom'
+                ]
+            ];
+
+        $this->generateDTContent(
+            $this->uomPackage,
+            'system/tools/uom/view',
+            null,
+            ['name'],
+            true,
+            ['name'],
+            $controlActions,
+            [],
+            null,
+            'name'
+        );
+
+        $this->view->pick('uom/list');
     }
 
     /**
@@ -28,11 +69,11 @@ class UomComponent extends BaseComponent
     {
         $this->requestIsPost();
 
-        //$this->package->add{?}($this->postData());
+        $this->uomPackage->addUom($this->postData());
 
         $this->addResponse(
-            $this->package->packagesData->responseMessage,
-            $this->package->packagesData->responseCode
+            $this->uomPackage->packagesData->responseMessage,
+            $this->uomPackage->packagesData->responseCode
         );
     }
 
@@ -43,11 +84,11 @@ class UomComponent extends BaseComponent
     {
         $this->requestIsPost();
 
-        //$this->package->update{?}($this->postData());
+        $this->uomPackage->updateUom($this->postData());
 
         $this->addResponse(
-            $this->package->packagesData->responseMessage,
-            $this->package->packagesData->responseCode
+            $this->uomPackage->packagesData->responseMessage,
+            $this->uomPackage->packagesData->responseCode
         );
     }
 
@@ -58,11 +99,11 @@ class UomComponent extends BaseComponent
     {
         $this->requestIsPost();
 
-        //$this->package->remove{?}($this->postData());
+        $this->uomPackage->removeUom($this->postData());
 
         $this->addResponse(
-            $this->package->packagesData->responseMessage,
-            $this->package->packagesData->responseCode
+            $this->uomPackage->packagesData->responseMessage,
+            $this->uomPackage->packagesData->responseCode
         );
     }
 }

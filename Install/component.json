@@ -1,72 +1,72 @@
 {
 	"name" : "Units of measurements",
-	"route" : "system/tools/uom",
-	"description" : "<p>TMS system tools units of measurements component</p>",
+	"route" : "tools/uom",
+	"description" : "<p>TMS units of measurements component</p>",
 	"module_type" : "components",
 	"app_type" : "tms",
-	"category" : "tools",
+	"category" : "admin",
 	"version" : "0.0.0",
-	"repo" : "https://github.com/sp-tms/tms-components-tools-systemtoolsuom",
-	"class" : "Apps\\Tms\\Components\\System\\Tools\\Uom\\UomComponent",
-	"dependencies" : 
+	"repo" : "https://github.com/sp-tms/tms-components-admin-toolsuom",
+	"class" : "Apps\\Tms\\Components\\Tools\\Uom\\UomComponent",
+	"dependencies" :
 	{
-		"core" : 
+		"core" :
 		{
 			"name" : "Core",
 			"version" : "0.0.0-rc.15",
 			"repo" : "https://github.com/sp-framework/core"
 		},
-		"apptype" : 
+		"apptype" :
 		{
 			"name" : "Transport Management System",
 			"version" : "0.0.0",
 			"repo" : "https://github.com/sp-tms/tms"
 		},
-		"packages" : [],
+		"packages" :
+		[
+			{
+				"name" : "ToolsUom",
+				"version" : "0.0.0",
+				"repo" : "https://github.com/sp-tms/tms-packages-tools-toolsuom"
+			}
+		],
 		"middlewares" : [],
 		"views" : [],
-		"externals" : 
+		"externals" :
 		{
-			"composer" : 
+			"composer" :
 			{
 				"require" : []
 			},
-			"config" : 
+			"config" :
 			{
 				"allow-plugins" : []
 			},
-			"extra" : 
+			"extra" :
 			{
 				"patches" : []
 			}
 		}
 	},
-	"menu" : 
+	"menu" :
 	{
-		"system" : 
+		"tools" :
 		{
-			"title" : "system",
+			"title" : "tools",
 			"icon" : "cogs",
-			"childs" : 
+			"childs" :
 			{
-				"tools" : 
+				"uom" :
 				{
-					"title" : "tools",
-					"icon" : "wrench",
-					"childs" : 
-					{
-						"uom" : 
-						{
-							"title" : "uom",
-							"icon" : "circle",
-							"link" : "system/tools/uom"
-						}
-					}
+					"title" : "uom",
+					"icon" : "circle",
+					"link" : "tools/uom"
 				}
 			}
 		},
 		"seq" : "0"
 	},
 	"widgets" : [],
+	"filters" : [],
 	"settings" : []
 }

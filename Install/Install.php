@@ -1,6 +1,6 @@
 <?php
 
-namespace Apps\Tms\Components\System\Tools\Uom\Install;
+namespace Apps\Tms\Components\Tools\Uom\Install;
 
 use System\Base\BasePackage;
 use System\Base\Providers\ModulesServiceProvider\MenuInstaller;
