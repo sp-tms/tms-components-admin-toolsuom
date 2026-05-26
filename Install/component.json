@@ -8,21 +8,21 @@
 	"version" : "0.0.0",
 	"repo" : "https://github.com/sp-tms/tms-components-admin-toolsuom",
 	"class" : "Apps\\Tms\\Components\\Tools\\Uom\\UomComponent",
-	"dependencies" :
+	"dependencies" : 
 	{
-		"core" :
+		"core" : 
 		{
 			"name" : "Core",
 			"version" : "0.0.0-rc.15",
 			"repo" : "https://github.com/sp-framework/core"
 		},
-		"apptype" :
+		"apptype" : 
 		{
 			"name" : "Transport Management System",
 			"version" : "0.0.0",
 			"repo" : "https://github.com/sp-tms/tms"
 		},
-		"packages" :
+		"packages" : 
 		[
 			{
 				"name" : "ToolsUom",
@@ -32,31 +32,31 @@
 		],
 		"middlewares" : [],
 		"views" : [],
-		"externals" :
+		"externals" : 
 		{
-			"composer" :
+			"composer" : 
 			{
 				"require" : []
 			},
-			"config" :
+			"config" : 
 			{
 				"allow-plugins" : []
 			},
-			"extra" :
+			"extra" : 
 			{
 				"patches" : []
 			}
 		}
 	},
-	"menu" :
+	"menu" : 
 	{
-		"tools" :
+		"tools" : 
 		{
 			"title" : "tools",
 			"icon" : "cogs",
-			"childs" :
+			"childs" : 
 			{
-				"uom" :
+				"uom" : 
 				{
 					"title" : "uom",
 					"icon" : "circle",

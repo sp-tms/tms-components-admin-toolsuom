@@ -48,7 +48,7 @@ class UomComponent extends BaseComponent
 
         $this->generateDTContent(
             $this->uomPackage,
-            'system/tools/uom/view',
+            'tools/uom/view',
             null,
             ['name'],
             true,
