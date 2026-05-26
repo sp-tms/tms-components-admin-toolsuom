@@ -42,7 +42,7 @@ class UomComponent extends BaseComponent
             [
                 'actionsToEnable'       =>
                 [
-                    'edit'      => 'system/tools/uom'
+                    'edit'      => 'tools/uom'
                 ]
             ];
 
