@@ -31,7 +31,14 @@
 			}
 		],
 		"middlewares" : [],
-		"views" : [],
+		"views" : 
+		[
+			{
+				"name" : "ToolsUom",
+				"version" : "0.0.0",
+				"repo" : "https://github.com/sp-tms/tms-views-admin-default-toolsuom"
+			}
+		],
 		"externals" : 
 		{
 			"composer" : 
